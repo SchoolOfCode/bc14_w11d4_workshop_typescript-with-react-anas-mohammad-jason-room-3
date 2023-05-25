@@ -1,12 +1,18 @@
-export function TodoButtons(props) {
-  const {
-    isEditing,
-    isComplete,
-    onClickToggle,
-    onClickDelete,
-    onClickEditOrDone,
-  } = props;
+type TodoButtonsProps = {
+  isEditing: boolean;
+  isComplete: boolean;
+  onClickToggle: () => void;
+  onClickDelete: () => void;
+  onClickEditOrDone: () => void;
+};
 
+export const TodoButtons: React.FC<TodoButtonsProps> = ({
+  isEditing,
+  isComplete,
+  onClickToggle,
+  onClickDelete,
+  onClickEditOrDone,
+}) => {
   return (
     <div className="todo-buttons">
       {!isEditing && (
@@ -26,4 +32,4 @@ export function TodoButtons(props) {
       )}
     </div>
   );
-}
+};
