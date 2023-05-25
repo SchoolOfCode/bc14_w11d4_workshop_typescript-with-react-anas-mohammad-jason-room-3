@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 
-export function AddTodo(props) {
+type AddTodoProps = {
+  addTodo: (title: string) => void;
+}
+
+
+const AddTodo: React.FC<AddTodoProps> = props => {
   const { addTodo } = props;
 
   const [todoTitle, setTodoTitle] = useState("");
 
-  function onChange(e) {
+  const onChange=(e: ChangeEvent<HTMLInputElement>) => {
     setTodoTitle(e.target.value);
   }
 
-  function onClickAdd() {
+  const onClickAdd = () => {
     if (todoTitle.trim() === "") {
       return;
     }
@@ -32,3 +37,5 @@ export function AddTodo(props) {
     </div>
   );
 }
+
+export default AddTodo;
