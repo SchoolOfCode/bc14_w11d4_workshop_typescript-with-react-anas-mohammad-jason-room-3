@@ -36,3 +36,5 @@ Convert the `TodoList.js` component to TypeScript
 ## Bonus Task
 
 Extend the app however you'd like, only using TypeScript.
+
+first commit
